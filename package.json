@@ -37,9 +37,11 @@
     "moment": "^2.29.4",
     "ms": "^2.1.3",
     "nekos.life": "^3.0.0",
+    "node": "^18.12.1",
     "node-fetch": "^3.3.0",
     "node-update": "^0.0.9",
     "npm-check-updates": "^16.6.0",
+    "package-lock-only": "^0.0.4",
     "radio-browser": "^2.2.2",
     "random-puppy": "^1.1.0",
     "random-words": "^1.2.0",
@@ -66,7 +68,7 @@
   "author": "sakurascoding",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sakurascoding/SweetPeachTestPT"
+    "url": "git+https://github.com/sakurascoding/SweetPeachesOfficial"
   },
   "keywords": [
     "lavalink",
@@ -89,10 +91,10 @@
     "reactions"
   ],
   "bugs": {
-    "url": "https://github.com/sakurascoding/SweetPeachTestPT2/issues"
+    "url": "https://github.com/sakurascoding/SweetPeachesOfficial/issues"
   },
   "homepage": "https://milrato.dev",
   "devDependencies": {
-    "node": "^18.12.1"
+    "node": "^16.15.0"
   }
 }
