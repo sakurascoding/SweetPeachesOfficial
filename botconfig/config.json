@@ -1,0 +1,38 @@
+{
+   "token": "MTAzNDAzOTYwNTA2ODA0NjQxNg.Gq7Nu2.zDEDTC4DzVmKo5Jw4oirDDq-0L7QkvzgR8OyuI",
+   "prefix": "$",
+   "ownerIDS": [
+      "796091752648802354"
+   ],
+   "memer_api": "g5SOlSadRiK",
+   "status": {
+      "text": "*help | I love peaches. Wait, don't eat me...",
+      "text2": "*help | Justin Beiber's Peaches",
+      "type": "LISTENING",
+      "url": "https://www.youtube.com/watch?v=tQ0yjYUFKAE"
+   },
+   "clientsettings": {
+      "nodes": [
+         {
+            "host": "78.108.218.114",
+            "port": 25219,
+            "password": "music.sakurascoding.xyz"
+         }
+      ]
+   },
+   "spotify": {
+      "clientSecret": "053469ffeb3844079fab734ebf3090c2",
+      "clientID": "bf5ee2a72bae40ffadc71a47280e5ff9"
+   },
+   "settings": {
+      "leaveOnEmpty_Channel": {
+         "enabled": true,
+         "time_delay": 30000
+      },
+      "LeaveOnEmpty_Queue": {
+         "enabled": true,
+         "time_delay": 30000
+      },
+      "selfDeaf": true
+   }
+}
