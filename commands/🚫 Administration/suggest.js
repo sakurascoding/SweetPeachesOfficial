@@ -48,12 +48,12 @@ module.exports = {
             client.settings.ensure(message.guild.id, {
               suggest: {
                 channel: "",
-                approvemsg: `<a:yes:833101995723194437> Accepted Idea! Expect this soon.`,
-                denymsg: `<:no:833101993668771842> Thank you for the feedback, but we are not interested in this idea at this time.`,
+                approvemsg: `<a:yes:933239140718358558> Accepted Idea! Expect this soon.`,
+                denymsg: `<:no:933239221836206131> Thank you for the feedback, but we are not interested in this idea at this time.`,
                 maybemsg: `💡 We are thinking about this idea!`,
                 duplicatemsg: `💢 This is a duplicated Suggestion`,
                 soonmsg: `👌 Expect this Feature Soon!`,
-                statustext: `<a:Loading:833101350623117342> Waiting for Community Feedback, please vote!`,
+                statustext: `<a:loading:933964409661972491> Waiting for Community Feedback, please vote!`,
                 footertext: `Want to suggest / Feedback something? Simply type in this channel!`,
                 approveemoji: `833101995723194437`,
                 denyemoji: `833101993668771842`,
@@ -199,10 +199,10 @@ module.exports = {
                 .setFooter(client.getFooter(`Want to suggest something? Simply type it in this channel`, "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/light-bulb_1f4a1.png"))
               
             if(embed.fields[2]){
-              embed.fields[2].name == `<:arrow:832598861813776394> __Reason by **${message.author.tag}**:__`;
+              embed.fields[2].name == `<:arrow:934482036377419866> __Reason by **${message.author.tag}**:__`;
               embed.fields[2].value == `>>> ${String(reason).substr(0, 1000)}`;
             } else {
-              embed.addField(`<:arrow:832598861813776394> __Reason by **${message.author.tag}**__`, `>>> ${String(reason).substr(0, 1000)}`)
+              embed.addField(`<:arrow:934482036377419866> __Reason by **${message.author.tag}**__`, `>>> ${String(reason).substr(0, 1000)}`)
             }
             targetMessage.edit({embeds: [embed]})
             try{

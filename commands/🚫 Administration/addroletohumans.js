@@ -83,7 +83,7 @@
        message.reply({embeds:  [new MessageEmbed()
           .setColor(es.color).setThumbnail(es.thumb ? es.footericon && (es.footericon.includes("http://") || es.footericon.includes("https://")) ? es.footericon : client.user.displayAvatarURL() : null)
          .setFooter(client.getFooter(es))
-         .setAuthor(`Changing roles for ${members.length} Humans...`, "https://images-ext-1.discordapp.net/external/ANU162U1fDdmQhim_BcbQ3lf4dLaIQl7p0HcqzD5wJA/https/cdn.discordapp.com/emojis/756773010123522058.gif", "https://discord.gg/2dKrZQyaC4")
+         .setAuthor(`Changing roles for ${members.length} Humans...`, "https://images-ext-1.discordapp.net/external/ANU162U1fDdmQhim_BcbQ3lf4dLaIQl7p0HcqzD5wJA/https/cdn.discordapp.com/emojis/756773010123522058.gif", "https://discord.gg/notsaksh")
          .setDescription(eval(client.la[ls]["cmds"]["administration"]["addroletoeveryone"]["variable10"]))
        ]});
        if (client.settings.get(message.guild.id, `adminlog`) != "no") {
@@ -130,7 +130,7 @@
              .setColor(es.color).setThumbnail(es.thumb ? es.footericon && (es.footericon.includes("http://") || es.footericon.includes("https://")) ? es.footericon : client.user.displayAvatarURL() : null)
              .setFooter(client.getFooter(es))
              .setTitle(`${emoji?.msg.SUCCESS} SUCCESS`)
-             .setDescription(`Successfully added ${role} to \`${success} HUMANS\` of \`${counter} HUMANS\`${failed != 0 ? `\n${failed} Members, did not get the added, redo it with: \`${prefix}addroletohumans ${role.id}\``: ""}`)
+             .setDescription(`Successfully Added ${role} to \`${success} HUMANS\` of \`${counter} HUMANS\`${failed != 0 ? `\n${failed} Members, did not get the added, redo it with: \`${prefix}addroletohumans ${role.id}\``: ""}`)
           ]});
        }
 

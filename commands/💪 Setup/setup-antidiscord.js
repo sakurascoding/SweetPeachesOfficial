@@ -38,7 +38,7 @@ module.exports = {
           {
             value: `${client.settings.get(message.guild.id, `antidiscord.enabled`) ? "Disable" : "Enable"} Anti Discord`,
             description: `${client.settings.get(message.guild.id, `antidiscord.enabled`) ? "Don't delete other Discord Links" : "Delete other Discord Links"}`,
-            emoji: `${client.settings.get(message.guild.id, `antidiscord.enabled`) ? "833101993668771842" : "833101995723194437"}`
+            emoji: `${client.settings.get(message.guild.id, `antidiscord.enabled`) ? "933742305398116363" : "933239140718358558"}`
           },
           {
             value: "Settings",
@@ -73,7 +73,7 @@ module.exports = {
           {
             value: "Cancel",
             description: `Cancel and stop the Ticket-Setup!`,
-            emoji: "862306766338523166"
+            emoji: "934152965856591953"
           }
         ]
         let Selection = new MessageSelectMenu()
@@ -94,7 +94,7 @@ module.exports = {
           .setColor(es.color)
           .setAuthor("Anti-Discord-Links System Setup", 
           "https://cdn.discordapp.com/emojis/858405056238714930.gif?v=1",
-          "https://discord.gg/milrato")
+          "https://discord.gg/notsaksh")
           .setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-antidiscord"]["variable1"]))
         let used1 = false;
         //send the menu msg
@@ -114,11 +114,11 @@ module.exports = {
             menu?.deferUpdate(); used1 = true;
             handle_the_picks(menuoptionindex, menuoptiondata)
           }
-          else menu?.reply({content: `<:no:833101993668771842> You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
+          else menu?.reply({content: `<:no:933239221836206131> You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
         });
         //Once the Collections ended edit the menu message
         collector.on('end', collected => {
-          menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:833101995723194437> **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
+          menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:933239140718358558> **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
         });
       }
 
@@ -139,7 +139,7 @@ module.exports = {
             return message.reply({embeds: [new Discord.MessageEmbed()
               .setTitle(eval(client.la[ls]["cmds"]["setup"]["setup-antidiscord"]["variable4"]))
               .setColor(es.color)
-              .setDescription(`**Enabled:** ${thesettings.enabled ? "<a:yes:833101995723194437>" : "<:no:833101993668771842>"}\n\n**Witelisted Channels:** ${thesettings.whitelistedchannels.length > 0 ? `<#${thesettings.whitelistedchannels.join("> | <#")}>` : "No Channels Whitelisted!"}\n\n**Information:** *Anti Discord are not enabled in Tickets from THIS BOT*`.substr(0, 2048))
+              .setDescription(`**Enabled:** ${thesettings.enabled ? "<a:yes:933239140718358558>" : "<:no:933239221836206131>"}\n\n**Witelisted Channels:** ${thesettings.whitelistedchannels.length > 0 ? `<#${thesettings.whitelistedchannels.join("> | <#")}>` : "No Channels Whitelisted!"}\n\n**Information:** *Anti Discord are not enabled in Tickets from THIS BOT*`.substr(0, 2048))
               .addField("**Whitelisted Links**", `${thesettings.whitelistedlinks.lenght > 0 ? thesettings.whitelistedlinks.join("\n").substr(0, 1024): "No Links allowed!"}`)
               .setFooter(client.getFooter(es))
             ]});
@@ -236,7 +236,7 @@ module.exports = {
                   });
                 }
               } else {
-                message.reply("you didn't ping a valid Channel")
+                message.reply(":x: you didn't ping a valid Channel")
               }
             })
             .catch(e => {

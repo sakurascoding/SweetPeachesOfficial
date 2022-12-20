@@ -74,7 +74,7 @@ module.exports = {
         //define the embed
         let MenuEmbed = new Discord.MessageEmbed()
         .setColor(es.color)
-        .setAuthor('Owner Setup', 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/prohibited_1f6ab?.png',  'https://discord.gg/milrato')
+        .setAuthor('Owner Setup', 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/prohibited_1f6ab?.png',  'https://discord.gg/nexusdev')
         .setDescription(eval(client.la[ls]["cmds"]["owner"]["setup-advertise"]["variable4"]))
         let used1 = false;
         //send the menu msg

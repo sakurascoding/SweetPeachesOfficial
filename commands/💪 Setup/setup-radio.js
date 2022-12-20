@@ -114,7 +114,7 @@ module.exports = {
         //send the message of the searching <a:Playing_Audio:859459305152708630> <a:Playing_Audio:859459305152708630> 
         message.reply(
             new Discord.MessageEmbed()
-                .setTitle("<a:Playing_Audio:859459305152708630> Setup Complete for Radio Station:  " + song.title)
+                .setTitle("<a:playing:933241885730938901> Setup Complete for Radio Station:  " + song.title)
                 .setColor("#7fafe3")
                 .setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-radio"]["variable8"]))
                 .setURL(song.url)

@@ -54,7 +54,7 @@ module.exports = {
               .setFooter(client.getFooter(es))
             ]})
             if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-              return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+              return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
             }
             vc.permissionOverwrites.set([{
               id: message.guild.id,
@@ -63,7 +63,7 @@ module.exports = {
             }])
             .then(lol => {
               if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-                return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+                return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
               }
               vc.permissionOverwrites.edit(message.author.id, {
                 MANAGE_CHANNELS: true,
@@ -113,14 +113,14 @@ module.exports = {
             ]})
             
           if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-            return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+            return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
           }
           vc.permissionOverwrites.edit(message.guild.id, {
             VIEW_CHANNEL: true,
             CONNECT: true
           }).then(lol => {
             if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-              return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+              return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
             }
             vc.permissionOverwrites.edit(message.author.id, {
               MANAGE_CHANNELS: true,
@@ -169,7 +169,7 @@ module.exports = {
               .setFooter(client.getFooter(es))
             ]})
             if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-              return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+              return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
             }
             vc.permissionOverwrites.set([{
               id: message.guild.id,
@@ -178,7 +178,7 @@ module.exports = {
             }])
             .then(lol => {
               if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-                return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+                return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
               }
               vc.permissionOverwrites.edit(message.author.id, {
                 MANAGE_CHANNELS: true,
@@ -188,7 +188,7 @@ module.exports = {
               })
               return message.reply({embeds : [new Discord.MessageEmbed()
                 .setColor(es.color).setThumbnail(es.thumb ? es.footericon && (es.footericon.includes("http://") || es.footericon.includes("https://")) ? es.footericon : client.user.displayAvatarURL() : null)
-                .setTitle("✅ STAGED your Channel!")
+                .setTitle("<a:yes:933239140718358558> STAGED your Channel!")
                 .setDescription(`Noone can speak anymore!`)
                 .setFooter(client.getFooter(es))
               ]})
@@ -228,7 +228,7 @@ module.exports = {
             ]})
             
           if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-            return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+            return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
           }
           vc.permissionOverwrites.edit(message.guild.id, {
             VIEW_CHANNEL: true,
@@ -236,7 +236,7 @@ module.exports = {
             SPEAK: true,
           }).then(lol => {
             if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-              return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+              return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
             }
             vc.permissionOverwrites.edit(message.author.id, {
               MANAGE_CHANNELS: true,
@@ -247,7 +247,7 @@ module.exports = {
             })
             return message.reply({embeds : [new Discord.MessageEmbed()
               .setColor(es.color).setThumbnail(es.thumb ? es.footericon && (es.footericon.includes("http://") || es.footericon.includes("https://")) ? es.footericon : client.user.displayAvatarURL() : null)
-              .setTitle("✅ UNSTAGED your Channel!")
+              .setTitle("<a:yes:933239140718358558> UNSTAGED your Channel!")
               .setDescription(`Everyone can speak in your Channel now!`)
               .setFooter(client.getFooter(es))
             ]})
@@ -373,18 +373,18 @@ module.exports = {
           try {
             
             if(!channel.permissionsFor(channel.guild.me).has(Permissions.FLAGS.CREATE_INSTANT_INVITE)){
-              return message.reply(`:x: **I am missing the CREATE_INSTANT_INVITE PERMISSION for \`${channel.name}\`**`)
+              return message.reply(`<:no:933239221836206131> **I am missing the CREATE_INSTANT_INVITE PERMISSION for \`${channel.name}\`**`)
             }
             channel.createInvite().then(invite => {
               if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-                return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+                return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
               }
               vc.permissionOverwrites.edit(member.user.id, {
                 VIEW_CHANNEL: true,
                 CONNECT: true
               }).then(lol => {
                 if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-                  return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+                  return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
                 }
                 vc.permissionOverwrites.edit(message.author.id, {
                   MANAGE_CHANNELS: true,
@@ -484,7 +484,7 @@ module.exports = {
             }
             
           if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-            return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+            return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
           }
           vc.permissionOverwrites.edit(member.user.id, {
             VIEW_CHANNEL: true,
@@ -492,7 +492,7 @@ module.exports = {
           }).then(lol => {
             
             if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-              return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+              return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
             }
             vc.permissionOverwrites.edit(message.author.id, {
               MANAGE_CHANNELS: true,
@@ -554,14 +554,14 @@ module.exports = {
             .setFooter(client.getFooter(es))
           ]})
           if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-            return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+            return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
           }
           vc.permissionOverwrites.edit(member.user.id, {
             VIEW_CHANNEL: true,
             CONNECT: true
           }).then(lol => {
             if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-              return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+              return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
             }
             vc.permissionOverwrites.edit(message.author.id, {
               MANAGE_CHANNELS: true,
@@ -622,14 +622,14 @@ module.exports = {
             .setFooter(client.getFooter(es))
           ]})
           if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-            return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+            return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
           }
           vc.permissionOverwrites.edit(member.user.id, {
             VIEW_CHANNEL: true,
             CONNECT: true
           }).then(lol => {
             if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-              return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+              return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
             }
             vc.permissionOverwrites.edit(message.author.id, {
               MANAGE_CHANNELS: true,
@@ -690,14 +690,14 @@ module.exports = {
             .setFooter(client.getFooter(es))
           ]})
           if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-            return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+            return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
           }
           vc.permissionOverwrites.edit(member.user.id, {
             VIEW_CHANNEL: true,
             CONNECT: false
           }).then(lol => {
             if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-              return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+              return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
             }
             vc.permissionOverwrites.edit(message.author.id, {
               MANAGE_CHANNELS: true,
@@ -892,7 +892,7 @@ module.exports = {
             ]})
           try {
             if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-              return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+              return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
             }
             vc.permissionOverwrites.edit(member.user.id, {
               MANAGE_CHANNELS: true,
@@ -901,7 +901,7 @@ module.exports = {
               CONNECT: true
             }).then(l => {
               if(!vc.permissionsFor(vc.guild.me).has(Permissions.FLAGS.MANAGE_CHANNELS)){
-                return message.reply(`:x: **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
+                return message.reply(`<:no:933239221836206131> **I am missing the MANAGE_CHANNEL PERMISSION for \`${vc.name}\`**`)
               }
               vc.permissionOverwrites.edit(message.author.id, {
                   MANAGE_CHANNELS: false,

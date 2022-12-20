@@ -33,7 +33,7 @@ async function playtop(client, message, args, type, slashCommand) {
     player.set("message", message);
     player.set("playerauthor", message.author.id);
     player.connect();
-    try{message.react("863876115584385074").catch(() => {});}catch(e){console.log(String(e).grey)}
+    try{message.react("934506868469039145").catch(() => {});}catch(e){console.log(String(e).grey)}
     player.stop();
   }
   let res;
@@ -76,7 +76,7 @@ async function playtop(client, message, args, type, slashCommand) {
       player.set("playerauthor", message.author.id);
       //connect
       player.connect();
-      try{message.react("863876115584385074").catch(() => {});}catch(e){console.log(String(e).grey)}
+      try{message.react("934506868469039145").catch(() => {});}catch(e){console.log(String(e).grey)}
       //add track
       player.queue.add(res.tracks[0]);
       //play track
@@ -181,7 +181,7 @@ async function playtop(client, message, args, type, slashCommand) {
     let playlistembed = new Discord.MessageEmbed()
       .setAuthor(`Playlist added to Queue`, message.author.displayAvatarURL({
         dynamic: true
-      }), "https://milrato.eu")
+      }), "https://notsaksh.me/")
       .setColor(ee.color)
       .setTitle(eval(client.la[ls]["handlers"]["playermanagers"]["playtop"]["variable4"]))
       .setThumbnail(`https://img.youtube.com/vi/${res.tracks[0].identifier}/mqdefault.jpg`)

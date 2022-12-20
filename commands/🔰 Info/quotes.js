@@ -40,7 +40,7 @@ module.exports = {
       console.log(args[0], args[0] && !isNaN(args[0]))
       if(args[0] && !isNaN(args[0])){
         if(Number(args[0]) < 0 || Number(args[0]) > data.length - 1 || !data[Number(args[0])] || !data[Number(args[0])].text){
-          return message.reply(`:x: **Invalid Quote ID!**\n> Use one between \`0\` and \`${data.length - 1}\``)
+          return message.reply(`<:no:933239221836206131> **Invalid Quote ID!**\n> Use one between \`0\` and \`${data.length - 1}\``)
         }
         let embed = new MessageEmbed()
           .setColor(es.color)
@@ -56,7 +56,7 @@ module.exports = {
           embed
         ]})
       }
-      if(!data || data.length == 0) return message.reply({content: ":x: **This User has no Quotes in this Server yet!**"})
+      if(!data || data.length == 0) return message.reply({content: "<:no:933239221836206131> **This User has no Quotes in this Server yet!**"})
       var datas = data.map((data, index) => 
         `\` ${index}. \` By: <@${data.by}> | At: \`${moment(data.at).format("DD/MM/YYYY HH:mm")}\` \n> ${String(data.text).length > 80 ? String(data.text).substr(0, 75) + " ..." : String(data.text)}\n`
         );

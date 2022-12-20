@@ -92,7 +92,7 @@ module.exports = {
             theDB = client[`menuapply${SetupNumber}`]; //change to the right database
             second_layer()
           } else menu?.reply({
-            content: `<:no:833101993668771842> You are not allowed to do that! Only: <@${cmduser.id}>`,
+            content: `<:no:933239221836206131> You are not allowed to do that! Only: <@${cmduser.id}>`,
             ephemeral: true
           });
         });
@@ -101,7 +101,7 @@ module.exports = {
           menumsg.edit({
             embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)],
             components: [],
-            content: `<a:yes:833101995723194437> **Selected: \`${collected && collected.first() && collected.first().values ? collected.first().values[0] : "Nothing"}\`**`
+            content: `<a:yes:933239140718358558> **Selected: \`${collected && collected.first() && collected.first().values ? collected.first().values[0] : "Nothing"}\`**`
           })
         });
       }
@@ -177,7 +177,7 @@ module.exports = {
             menu?.deferUpdate();
             handle_the_picks(menu?.values[0], menuoptiondata)
           } else menu?.reply({
-            content: `<:no:833101993668771842> You are not allowed to do that! Only: <@${cmduser.id}>`,
+            content: `<:no:933239221836206131> You are not allowed to do that! Only: <@${cmduser.id}>`,
             ephemeral: true
           });
         });
@@ -186,7 +186,7 @@ module.exports = {
           menumsg.edit({
             embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)],
             components: [],
-            content: `<a:yes:833101995723194437> **Selected: \`${collected && collected.first() && collected.first().values ? collected.first().values[0] : "Nothing"}\`**`
+            content: `<a:yes:933239140718358558> **Selected: \`${collected && collected.first() && collected.first().values ? collected.first().values[0] : "Nothing"}\`**`
           })
         });
       }
@@ -196,7 +196,7 @@ module.exports = {
             let data = theDB.get(message.guild.id, "data");
             let settings = theDB.get(message.guild.id);
             if (!data || data.length < 1) {
-              return message.reply("<:no:833101993668771842> **You need to add at least 1 Open-Apply-Option**")
+              return message.reply("<:no:933239221836206131> **You need to add at least 1 Open-Apply-Option**")
             }
             let tempmsg = await message.reply({
               embeds: [
@@ -287,17 +287,17 @@ module.exports = {
                   message.reply(`Successfully Setupped the Menu-Apply in <#${channel.id}>`)
                 });
               } else {
-                return message.reply("<:no:833101993668771842> **You did not ping a valid Channel!**")
+                return message.reply("<:no:933239221836206131> **You did not ping a valid Channel!**")
               }
             } else {
-              return message.reply("<:no:833101993668771842> **You did not enter a Valid Message in Time! CANCELLED!**")
+              return message.reply("<:no:933239221836206131> **You did not enter a Valid Message in Time! CANCELLED!**")
             }
           }
           break;
           case "Add Apply Option": {
             let data = theDB.get(message.guild.id, "data");
             if (data.length >= 25) {
-              return message.reply("<:no:833101993668771842> **You reached the limit of 25 different Options!** Remove another Option first!")
+              return message.reply("<:no:933239221836206131> **You reached the limit of 25 different Options!** Remove another Option first!")
             }
             //ask for value and description
             let tempmsg = await message.reply({
@@ -314,11 +314,11 @@ module.exports = {
               time: 90000, errors: ["time"]
             });
             if (collected && collected.first().content) {
-              if (!collected.first().content.includes("++")) return message.reply("<:no:833101993668771842> **Invalid Usage! Please mind the Usage and check the Example**")
+              if (!collected.first().content.includes("++")) return message.reply("<:no:933239221836206131> **Invalid Usage! Please mind the Usage and check the Example**")
               let value = collected.first().content.split("++")[0].trim().substr(0, 25);
               let index = data.findIndex(v => v.value == value);
               if(index >= 0) {
-                  return message.reply("<:no:833101993668771842> **Options can't have the SAME VALUE!** There is already an Option with that Value!");
+                  return message.reply("<:no:933239221836206131> **Options can't have the SAME VALUE!** There is already an Option with that Value!");
               }
               let description = collected.first().content.split("++")[1].trim().substr(0, 50);
 
@@ -393,12 +393,12 @@ module.exports = {
                 let applySystemExecution = menu?.values[0].split(" ")[0]
                 let index = data.findIndex(v => v.applySystemExecution == applySystemExecution);
                 if(index >= 0) {
-                    return message.reply("<:no:833101993668771842> **Options can't start the Same Apply System!** There is already an Option with that Application System!");
+                    return message.reply("<:no:933239221836206131> **Options can't start the Same Apply System!** There is already an Option with that Application System!");
                 }
                 
                 var apply_for_here = client[`apply${applySystemExecution == 1 ? "" : applySystemExecution }`]
                 if(!apply_for_here.has(message.guild.id) || !apply_for_here.has(message.guild.id, "QUESTIONS") || apply_for_here.get(message.guild.id, "QUESTIONS").length < 1) 
-                  return message.reply(`<:no:833101993668771842> **The ${applySystemExecution}. Apply System is not setupped / has no Questions, create it first with: \`${prefix}setup-apply\`**`)
+                  return message.reply(`<:no:933239221836206131> **The ${applySystemExecution}. Apply System is not setupped / has no Questions, create it first with: \`${prefix}setup-apply\`**`)
                 
                 var rermbed = new MessageEmbed()
                   .setColor(es.color)
@@ -465,21 +465,21 @@ module.exports = {
                   });
                 }
               }
-              else menu?.reply({content: `<:no:833101993668771842> You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
+              else menu?.reply({content: `<:no:933239221836206131> You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
             });
             //Once the Collections ended edit the menu message
             collector.on('end', collected => {
-              menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:833101995723194437> **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
+              menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:933239140718358558> **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
             });
             } else {
-              return message.reply("<:no:833101993668771842> **You did not enter a Valid Message in Time! CANCELLED!**")
+              return message.reply("<:no:933239221836206131> **You did not enter a Valid Message in Time! CANCELLED!**")
             }
           }
           break;
           case "Remove Apply Option": {
           let data = theDB.get(message.guild.id, "data");
           if (!data || data.length < 1) {
-            return message.reply("<:no:833101993668771842> **There are no Open-Apply-Options to remove**")
+            return message.reply("<:no:933239221836206131> **There are no Open-Apply-Options to remove**")
           }
           let embed = new MessageEmbed()
             .setColor(es.color)
@@ -545,7 +545,7 @@ module.exports = {
               theDB.set(message.guild.id, data, "data");
               message.reply(`**Successfully removed:**\n>>> ${menu?.values.map(i => `\`${i}\``).join(", ")}\n\nDon't forget to resend the Apply Config-Message!`)
             } else menu?.reply({
-              content: `<:no:833101993668771842> You are not allowed to do that! Only: <@${cmduser.id}>`,
+              content: `<:no:933239221836206131> You are not allowed to do that! Only: <@${cmduser.id}>`,
               ephemeral: true
             });
           });
@@ -554,7 +554,7 @@ module.exports = {
             menumsg.edit({
               embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)],
               components: [],
-              content: `<a:yes:833101995723194437> **Selected: \`${collected.first().values[0]}\`**`
+              content: `<a:yes:933239140718358558> **Selected: \`${collected.first().values[0]}\`**`
             })
           });
         }

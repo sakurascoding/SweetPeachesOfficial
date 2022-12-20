@@ -183,7 +183,7 @@ module.exports = {
           message.reply({embeds : [new MessageEmbed()
             .setAuthor(`New Invites of: ${user.tag}`, user.displayAvatarURL({dynamic: true}), "https://discord.gg/milrato")
             .setColor(es.color).setThumbnail(es.thumb ? es.footericon && (es.footericon.includes("http://") || es.footericon.includes("https://")) ? es.footericon : client.user.displayAvatarURL() : null)
-            .addField("\u200b", `<:Like:857334024087011378> ${user} _**has invited __${realinvites} Member${realinvites != 1 ? "s": ""}__**_!`)
+            .addField("\u200b", `<:Like:934494916241948763> ${user} _**has invited __${realinvites} Member${realinvites != 1 ? "s": ""}__**_!`)
             .addField(eval(client.la[ls]["cmds"]["administration"]["manageinvites"]["variablex_6"]),eval(client.la[ls]["cmds"]["administration"]["manageinvites"]["variable6"]))
             .setFooter(client.getFooter(es))
           ]});

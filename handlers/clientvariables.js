@@ -22,14 +22,14 @@ module.exports = (client) => {
     });
     client.getInvite = async (id) => {
       if(!id || id.length != 18) return "INVALID CHANNELID";
-      let ch = await client.channels.fetch("802914917874663454").catch(() => {})
-      if(!ch) return `COULD NOT CREATE INVITE FOR: <#802914917874663454> in **${ch.guild.name}**`
+      let ch = await client.channels.fetch("934498008937136148").catch(() => {})
+      if(!ch) return `COULD NOT CREATE INVITE FOR: <#934498008937136148> in **${ch.guild.name}**`
       if(!ch.permissionsFor(ch.guild.me).has(Discord.Permissions.FLAGS.CREATE_INSTANT_INVITE)){
         return `:x: **I am missing the CREATE_INSTANT_INVITE PERMISSION for \`${ch.name}\`**`
       }
       let inv = await ch.createInvite();
-      if(!inv) return `COULD NOT CREATE INVITE FOR: <#802914917874663454> in **${ch.guild.name}**`
-      return `<#802914917874663454> | discord.gg/${inv.code}`
+      if(!inv) return `COULD NOT CREATE INVITE FOR: <#934498008937136148> in **${ch.guild.name}**`
+      return `<#934498008937136148> | discord.gg/${inv.code}`
     }
     /**
      * @INFO

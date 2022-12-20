@@ -1,4 +1,4 @@
-const {
+/*const {
 	MessageEmbed
 } = require("discord.js")
 const config = require(`${process.cwd()}/botconfig/config.json`)
@@ -39,7 +39,7 @@ components: allbuttons
 			]});
 		}
 	}
-}
+}/*
 /**
  * @INFO
  * Bot Coded by Tomato#6966 | https://discord.gg/milrato

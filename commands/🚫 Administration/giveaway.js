@@ -126,7 +126,7 @@ module.exports = {
                 let options = {
                     time: giveawayDuration,
                     duration: giveawayDuration,
-                    prize: `<a:Gift:853993605868683285> ${giveawayPrize} <a:Gift:853993605868683285>`,
+                    prize: `<a:Gift:934673711863304272> ${giveawayPrize} <a:Gift:934673711863304272>`,
                     winnerCount: giveawayNumberWinners,
                     hostedBy: message.author,
                     thumbnail: es.thumb ? es.footericon && (es.footericon.includes("http://") || es.footericon.includes("https://")) ? es.footericon : client.user.displayAvatarURL() : null,
@@ -148,14 +148,14 @@ module.exports = {
                     },
                     bonusEntries: [],
                     messages: {
-                        inviteToParticipate: "***React with <a:Tada_Yellow:867721863151747092> to participate!***\n",
+                        inviteToParticipate: "***React with <a:Tada_Yellow:934674104659898478> to participate!***\n",
                         drawing: "> Ends: {timestamp}\n",
                         hostedBy: "**Hosted by:** {this.hostedBy}",
-                        dropMessage: "Be the first to react with <a:Tada_Yellow:867721863151747092>",
+                        dropMessage: "Be the first to react with <a:Tada_Yellow:934674104659898478>",
                         noWinner: "\n**Giveaway cancelled!**\n> No valid participations. :cry:",
                         endedAt: "Ends at", 
-                        giveaway: '<a:Tada_Yellow:867721863151747092> **GIVEAWAY STARTED** <a:Tada_Yellow:867721863151747092>',
-                        giveawayEnded: '<a:Tada_Green:867721862858539048> **GIVEAWAY ENDED** <a:Tada_Green:867721862858539048>',
+                        giveaway: '<a:Tada_Yellow:934674104659898478> **GIVEAWAY STARTED** <a:Tada_Yellow:934674104659898478>',
+                        giveawayEnded: '<a:Tada_Yellow:934674104659898478> **GIVEAWAY ENDED** <a:Tada_Yellow:934674104659898478>',
                         winMessage: '**Congrats** {winners}!\n> You won **{this.prize}**!\n> **Jump:** {this.messageURL}\nHosted by: {this.hostedBy}',
                         embedFooter: '{this.winnerCount} Winner{this.winnerCount > 1 ? "s" : ""}'
                     },
@@ -288,7 +288,7 @@ module.exports = {
                         message.reply(eval(client.la[ls]["cmds"]["administration"]["giveaway"]["variable36"]));
                     } else {
                         console.error(e);
-                        message.reply({content : '<:no:833101993668771842> **An error occured...**```' + String(e.message).substr(0, 1900) + "```"});
+                        message.reply({content : '<:no:933239221836206131> **An error occured...**```' + String(e.message).substr(0, 1900) + "```"});
                     }
                 });
 
@@ -311,7 +311,7 @@ module.exports = {
                         message.reply(eval(client.la[ls]["cmds"]["administration"]["giveaway"]["variable36"]));
                     } else {
                         console.error(e);
-                        message.reply({content : '<:no:833101993668771842> **An error occured...**```' + String(e.message).substr(0, 1900) + "```"});
+                        message.reply({content : '<:no:933239221836206131> **An error occured...**```' + String(e.message).substr(0, 1900) + "```"});
                     }
                 });
         } else if (args[0].toLowerCase() === "unpause" || args[0].toLowerCase() === "resume") {
@@ -334,7 +334,7 @@ module.exports = {
                         message.reply(eval(client.la[ls]["cmds"]["administration"]["giveaway"]["variable36"]));
                     } else {
                         console.error(e);
-                        message.reply({content : '<:no:833101993668771842> **An error occured...**```' + String(e.message).substr(0, 1900) + "```"});
+                        message.reply({content : '<:no:933239221836206131> **An error occured...**```' + String(e.message).substr(0, 1900) + "```"});
                     }
                 });
         } else if (args[0].toLowerCase() === "edit") {

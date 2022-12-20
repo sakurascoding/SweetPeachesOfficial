@@ -36,7 +36,7 @@ module.exports = {
           invites: realinvites
         };
       }).filter(Boolean)
-      if(!filtered || filtered.length < 1) return message.reply("There are no invites in this Guild yet!");
+      if(!filtered || filtered.length < 1) return message.reply("<:no:933239221836206131> There are no invites in this Guild yet!");
       const sorted = filtered.sort((a, b) => {
         if (a.invites > b.invites) {
           return -1;

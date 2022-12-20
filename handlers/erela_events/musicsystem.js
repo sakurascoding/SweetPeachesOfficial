@@ -37,18 +37,18 @@ module.exports = client => {
         //now its time to start the music system
         if (!member.voice.channel)
             return interaction?.reply({
-                content: `<:no:833101993668771842> **Please join a Voice Channel first!**`,
+                content: `<:no:933239221836206131> **Please join a Voice Channel first!**`,
                 ephemeral: true
             })      
             
         var player = client.manager.players.get(interaction?.guild.id);
         if (interaction?.customId != "Join" && interaction?.customId != "Leave" && (!player || !player.queue || !player.queue.current))
-            return interaction?.reply({content: "<:no:833101993668771842> Nothing Playing yet", ephemeral: true})
+            return interaction?.reply({content: "<:no:933239221836206131> Nothing Playing yet", ephemeral: true})
                         
         //if not connected to the same voice channel, then make sure to connect to it!
         if (player && member.voice.channel.id !== player.voiceChannel)
             return interaction?.reply({
-                content: `<:no:833101993668771842> **Please join __my__ Voice Channel first! <#${player.voiceChannel}>**`,
+                content: `<:no:933239221836206131> **Please join __my__ Voice Channel first! <#${player.voiceChannel}>**`,
                 ephemeral: true
             })
         //here i use my check_if_dj function to check if he is a dj if not then it returns true, and it shall stop!
@@ -56,7 +56,7 @@ module.exports = client => {
                 return interaction?.reply({embeds: [new MessageEmbed()
                   .setColor(ee.wrongcolor)
                   .setFooter({text: `${ee.footertext}`, iconURL: `${ee.footericon}`})
-                  .setTitle(`<:no:833101993668771842> **You are not a DJ and not the Song Requester!**`)
+                  .setTitle(`<:no:933239221836206131> **You are not a DJ and not the Song Requester!**`)
                   .setDescription(`**DJ-ROLES:**\n${check_if_dj(client, interaction?.member, player.queue.current)}`)
                 ],
                 ephemeral: true});
@@ -195,7 +195,7 @@ module.exports = client => {
                   embeds: [new MessageEmbed()
                   .setColor(ee.color)
                   .setTimestamp()
-                  .setTitle(`${player.get(`autoplay`) ? `<a:yes:833101995723194437> **Enabled Autoplay**`: `<:no:833101993668771842> **Disabled Autoplay**`}`)
+                  .setTitle(`${player.get(`autoplay`) ? `<a:yes:933239140718358558> **Enabled Autoplay**`: `<:no:933239221836206131> **Disabled Autoplay**`}`)
                   .setFooter(client.getFooter(`💢 Action by: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true})))]
                 })
                 //edit the message so that it's right!
@@ -234,7 +234,7 @@ module.exports = client => {
                   embeds: [new MessageEmbed()
                   .setColor(ee.color)
                   .setTimestamp()
-                  .setTitle(`${player.trackRepeat ? `<a:yes:833101995723194437> **Enabled Song Loop**`: `<:no:833101993668771842> **Disabled Song Loop**`}`)
+                  .setTitle(`${player.trackRepeat ? `<a:yes:933239140718358558> **Enabled Song Loop**`: `<:no:933239221836206131> **Disabled Song Loop**`}`)
                   .setFooter(client.getFooter(`💢 Action by: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true})))]
                 })
                 //edit the message so that it's right!
@@ -254,7 +254,7 @@ module.exports = client => {
                   embeds: [new MessageEmbed()
                   .setColor(ee.color)
                   .setTimestamp()
-                  .setTitle(`${player.queueRepeat ? `<a:yes:833101995723194437> **Enabled Queue Loop**`: `<:no:833101993668771842> **Disabled Queue Loop**`}`)
+                  .setTitle(`${player.queueRepeat ? `<a:yes:933239140718358558> **Enabled Queue Loop**`: `<:no:933239221836206131> **Disabled Queue Loop**`}`)
                   .setFooter(client.getFooter(`💢 Action by: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true})))]
                 })
                 //edit the message so that it's right!
@@ -361,11 +361,11 @@ module.exports = client => {
           channel
         } = message.member.voice;
         //if not in a Voice Channel return!
-        if (!channel) return message.reply("<:no:833101993668771842> **Please join a Voice Channel first!**").then(msg=>{setTimeout(()=>{try{msg.delete().catch(() => {});}catch(e){ }}, 5000)})
+        if (!channel) return message.reply("<:no:933239221836206131> **Please join a Voice Channel first!**").then(msg=>{setTimeout(()=>{try{msg.delete().catch(() => {});}catch(e){ }}, 5000)})
         //get the lavalink erela.js player information
         const player = client.manager.players.get(message.guild.id);
         //if there is a player and the user is not in the same channel as the Bot return information message
-        if (player && channel.id !== player.voiceChannel) return message.reply(`<:no:833101993668771842> **Please join __my__ Voice Channel first! <#${player.voiceChannel}>**`).then(msg=>{setTimeout(()=>{try{msg.delete().catch(() => {});}catch(e){ }}, 3000)})
+        if (player && channel.id !== player.voiceChannel) return message.reply(`<:no:933239221836206131> **Please join __my__ Voice Channel first! <#${player.voiceChannel}>**`).then(msg=>{setTimeout(()=>{try{msg.delete().catch(() => {});}catch(e){ }}, 3000)})
 
         
         else {
@@ -391,7 +391,7 @@ function generateQueueEmbed(client, guildId, leave){
         .setFooter(client.getFooter(es))
         .setImage(guild.banner ? guild.bannerURL({size: 4096}) : "https://imgur.com/jLvYdb4.png")
         .setTitle(`Start Listening to Music, by connecting to a Voice Channel and sending either the **SONG LINK** or **SONG NAME** in this Channel!`)
-        .setDescription(`> *I support <:Youtube:840260133686870036> Youtube, <:Spotify:846090652231663647> Spotify, <:soundcloud:825095625884434462> Soundcloud and direct MP3 Links!*`)
+        .setDescription(`> *I support <:Youtube:933247248081506325> Youtube, <:Spotify:933246700003409920> Spotify, <:soundcloud:934490678359121920> Soundcloud and direct MP3 Links!*`)
     ]
     const player = client.manager.players.get(guild.id);
     if(!leave && player && player.queue && player.queue.current){

@@ -95,7 +95,7 @@ for(let i = 1; i<=25; i++) {
       //get the actual current question from the Questions
       var current_question = Object.values(Questions[counter]).join(" ")
 
-      interaction?.reply({content: `Starting the Application in your **Direct Messages!**`, ephemeral: true})
+      interaction?.reply({content: `<a:yes:933239140718358558> Starting The Application In Your **Direct Messages!**`, ephemeral: true})
       //ask the current (first) Question from the Database
       ask_question(current_question);
 
@@ -108,7 +108,7 @@ for(let i = 1; i<=25; i++) {
         user.send({embeds: [new Discord.MessageEmbed()
             .setColor(es.color).setThumbnail(es.thumb ? es.footericon && (es.footericon.includes("http://") || es.footericon.includes("https://")) ? es.footericon : client.user.displayAvatarURL() : null)
             .setDescription(qu)
-            .setAuthor(client.getAuthor(`Question ${counter + 1} / ${Questions.length}`, client.user.displayAvatarURL(), "https://discord.gg/milrato"))
+            .setAuthor(client.getAuthor(`Question ${counter + 1} / ${Questions.length}`, client.user.displayAvatarURL(), "https://discord.gg/notsaksh"))
             .setFooter(client.getFooter(es))
         ]}).then(msg => {
             msg.channel.awaitMessages({ filter: m => m, 
@@ -316,7 +316,7 @@ for(let i = 1; i<=25; i++) {
           const finished_embed = new Discord.MessageEmbed()
             .setColor(es.color).setThumbnail(es.thumb ? es.footericon && (es.footericon.includes("http://") || es.footericon.includes("https://")) ? es.footericon : client.user.displayAvatarURL() : null)
             .setTitle(eval(client.la[ls]["handlers"]["applyjs"]["apply"]["variable22"]))
-            .addField("\u200b", `**❯** Go Back to the Channel ${originalchannel}`).setFooter(client.getFooter(es))
+            .addField("\u200b", `**❯** Go Back To The Channel ${originalchannel}`).setFooter(client.getFooter(es))
           originaluser.send({content: `**❯** Go Back to the Channel ${originalchannel}`, embeds: [finished_embed]})
 
           //then try catch
@@ -811,7 +811,7 @@ You can also type: ${client.settings.get(channel.guild.id, "prefix")}ticket!`, m
                 if (roleid.length !== 18) return;
                 //try to add the role
                 var member = message.guild.members.cache.get(usert.id)
-                member.roles.add(roleid).catch((e)=>{channel_tosend.send("I am Missing Permissions to grant the Role\n" + e.message)});
+                member.roles.add(roleid).catch((e)=>{channel_tosend.send("<:no:933239221836206131> I am Missing Permissions to grant the Role\n" + e.message)});
               }
             } catch (e) {
               //if an error happens, show it
@@ -879,7 +879,7 @@ You can also type: ${client.settings.get(channel.guild.id, "prefix")}ticket!`, m
                 if (roleid.length !== 18) return;
                 //try to add the role
                 var member = message.guild.members.cache.get(usert.id)
-                member.roles.add(roleid).catch((e)=>{channel_tosend.send("I am Missing Permissions to grant the Role\n" + e.message)});
+                member.roles.add(roleid).catch((e)=>{channel_tosend.send("<:no:933239221836206131> I am Missing Permissions To Grant The Role\n" + e.message)});
               }
             } catch (e) {
               //if an error happens, show it
@@ -946,7 +946,7 @@ You can also type: ${client.settings.get(channel.guild.id, "prefix")}ticket!`, m
                 if (roleid.length !== 18) return;
                 //try to add the role
                 var member = message.guild.members.cache.get(usert.id)
-                member.roles.add(roleid).catch((e)=>{channel_tosend.send("I am Missing Permissions to grant the Role\n" + e.message)});
+                member.roles.add(roleid).catch((e)=>{channel_tosend.send("<:no:933239221836206131> I am Missing Permissions to grant the Role\n" + e.message)});
               }
             } catch (e) {
               //if an error happens, show it
@@ -1012,7 +1012,7 @@ You can also type: ${client.settings.get(channel.guild.id, "prefix")}ticket!`, m
                 if (roleid.length !== 18) return;
                 //try to add the role
                 var member = message.guild.members.cache.get(usert.id)
-                member.roles.add(roleid).catch((e)=>{channel_tosend.send("I am Missing Permissions to grant the Role\n" + e.message)});
+                member.roles.add(roleid).catch((e)=>{channel_tosend.send("<:no:933239221836206131> I am Missing Permissions to grant the Role\n" + e.message)});
               }
             } catch (e) {
               //if an error happens, show it

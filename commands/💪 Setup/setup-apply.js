@@ -37,7 +37,7 @@ module.exports = {
       return user.id == cmduser.id
     };
     let guildid = message.guild.id;
-    let NumberEmojiIds = getNumberEmojis().map(emoji => emoji.replace(">", "").split(":")[2])
+    let NumberEmojiIds = getNumberEmojis().map(emoji => emoji?.replace(">", "").split(":")[2])
     first_layer()
     async function first_layer() {
       try {
@@ -119,11 +119,11 @@ module.exports = {
             temptype = SetupNumber;
             second_layer(SetupNumber, menuoptiondata)
           }
-          else menu?.reply({content: `<:no:833101993668771842> You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
+          else menu?.reply({content: `<:no:933239221836206131> You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
         });
         //Once the Collections ended edit the menu message
         collector.on('end', collected => {
-          menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:833101995723194437> **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
+          menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:933239140718358558> **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
         });
       } catch (e) {
         console.log(String(e.stack).grey.bgRed)
@@ -316,24 +316,24 @@ module.exports = {
         let menumsg = await message.reply({embeds: [MenuEmbed], components: [new MessageActionRow().addComponents(Selection)]})
         //Create the collector
         const collector = menumsg.createMessageComponentCollector({ 
-          filter: i => i.isSelectMenu() && i.message.author.id == client.user.id && i.user
+          filter: i => i?.isSelectMenu() && i?.message.author.id == client.user.id && i?.user,
           time: 90000
         })
         //Menu Collections
         collector.on('collect', menu => {
-          if (menu.user.id === cmduser.id) {
+          if (menu?.user.id === cmduser.id) {
             collector.stop();
             let menuoptiondata = menuoptions.find(v => v.value == menu?.values[0])
             if (menu?.values[0] == "Cancel") return menu?.reply(eval(client.la[ls]["cmds"]["setup"]["setup-ticket"]["variable5"]))
-            menu.deferUpdate();
+            menu?.deferUpdate();
             used2 = true;
-            handle_the_picks(menu.values[0], SetupNumber)
+            handle_the_picks(menu?.values[0], SetupNumber)
           }
-          else menu.reply({content: `<:no:833101993668771842> You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
+          else menu?.reply({content: `<:no:933239221836206131> You are not allowed to do that! Only: <@${cmduser.id}>`, ephemeral: true});
         });
         //Once the Collections ended edit the menu message
         collector.on('end', collected => {
-          menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:833101995723194437> **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
+          menumsg.edit({embeds: [menumsg.embeds[0].setDescription(`~~${menumsg.embeds[0].description}~~`)], components: [], content: `${collected && collected.first() && collected.first().values ? `<a:yes:933239140718358558> **Selected: \`${collected ? collected.first().values[0] : "Nothing"}\`**` : "❌ **NOTHING SELECTED - CANCELLED**" }`})
         });
       } catch (e) {
         console.log(String(e.stack).grey.bgRed)
@@ -388,15 +388,15 @@ module.exports = {
                 .setFooter(client.getFooter(es))
               ]
             })
-            var collector = pickmsg.createMessageComponentCollector({filter: (interaction) => interaction.isButton() && interaction.message.author.id == client.user.id && interaction.user.id == cmduser.id,
+            var collector = pickmsg.createMessageComponentCollector({filter: (interaction) => interaction?.isButton() && interaction?.message.author.id == client.user.id && interaction?.user.id == cmduser.id,
                 max: 1,
                 time: 180000,
                 erros: ["time"]
             })
             collector.on("collect", interaction => {
-                try { interaction.deferUpdate() } catch (e){ }
-                if (interaction.customId == "1") setup_with_channel_creation()
-                if (interaction.customId == "2") setup_without_channel_creation()
+                try { interaction?.deferUpdate() } catch (e){ }
+                if (interaction?.customId == "1") setup_with_channel_creation()
+                if (interaction?.customId == "2") setup_without_channel_creation()
             })
             async function setup_with_channel_creation() {
               var applychannel;
@@ -803,7 +803,7 @@ module.exports = {
                     }).then(msg => msg.delete({
                       timeout: 7500
                     }))
-                    throw "<:no:833101993668771842> ERROR";
+                    throw "<:no:933239221836206131> ERROR";
                   }
                 })
                 .catch(e => {
@@ -849,7 +849,7 @@ module.exports = {
                     }).then(msg => msg.delete({
                       timeout: 7500
                     }))
-                    throw "<:no:833101993668771842> ERROR";
+                    throw "<:no:933239221836206131> ERROR";
                   }
                 })
                 .catch(e => {
@@ -1158,7 +1158,7 @@ module.exports = {
                           var guildrole = message.guild.roles.cache.get(role.id)
 
                           if (!message.guild.me.roles) return message.reply({
-                            embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable58"])).setAuthor("<:no:833101993668771842> ERROR | Could not Access the Role", message.author.displayAvatarURL({
+                            embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable58"])).setAuthor("<:no:933239221836206131> ERROR | Could not Access the Role", message.author.displayAvatarURL({
                               dynamic: true
                             }))]
                           })
@@ -1409,11 +1409,11 @@ module.exports = {
             .then(collected => {
               var reaction = collected.first()
               reaction.users.remove(cmduser.id)
-              if (reaction.emoji.name === "1️⃣") type = "message";
-              else if (reaction.emoji.name === "2️⃣") type = "setrole";
-              else if (reaction.emoji.name === "3️⃣") type = "delrole";
-              else if (reaction.emoji.name === "4️⃣") type = "delimage";
-              else if (reaction.emoji.name === "5️⃣") type = "setimage";
+              if (reaction.emoji?.name === "1️⃣") type = "message";
+              else if (reaction.emoji?.name === "2️⃣") type = "setrole";
+              else if (reaction.emoji?.name === "3️⃣") type = "delrole";
+              else if (reaction.emoji?.name === "4️⃣") type = "delimage";
+              else if (reaction.emoji?.name === "5️⃣") type = "setimage";
               else throw "You reacted with a wrong emoji"
 
             })
@@ -1482,7 +1482,7 @@ module.exports = {
                 var guildrole = message.guild.roles.cache.get(role.id)
 
                 if (!message.guild.me.roles) return message.reply({
-                  embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable81"])).setAuthor("<:no:833101993668771842> ERROR | Could not Access the Role", message.author.displayAvatarURL({
+                  embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable81"])).setAuthor("<:no:933239221836206131> ERROR | Could not Access the Role", message.author.displayAvatarURL({
                     dynamic: true
                   }))]
                 })
@@ -1659,11 +1659,11 @@ module.exports = {
             .then(collected => {
               var reaction = collected.first()
               reaction.users.remove(cmduser.id)
-              if (reaction.emoji.name === "1️⃣") type = "message";
-              else if (reaction.emoji.name === "2️⃣") type = "setrole";
-              else if (reaction.emoji.name === "3️⃣") type = "delrole";
-              else if (reaction.emoji.name === "4️⃣") type = "delimage";
-              else if (reaction.emoji.name === "5️⃣") type = "setimage";
+              if (reaction.emoji?.name === "1️⃣") type = "message";
+              else if (reaction.emoji?.name === "2️⃣") type = "setrole";
+              else if (reaction.emoji?.name === "3️⃣") type = "delrole";
+              else if (reaction.emoji?.name === "4️⃣") type = "delimage";
+              else if (reaction.emoji?.name === "5️⃣") type = "setimage";
               else throw "You reacted with a wrong emoji"
 
             })
@@ -1737,7 +1737,7 @@ module.exports = {
                 var guildrole = message.guild.roles.cache.get(role.id)
 
                 if (!message.guild.me.roles) return message.reply({
-                  embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable100"])).setAuthor("<:no:833101993668771842> ERROR | Could not Access the Role", message.author.displayAvatarURL({
+                  embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable100"])).setAuthor("<:no:933239221836206131> ERROR | Could not Access the Role", message.author.displayAvatarURL({
                     dynamic: true
                   }))]
                 })
@@ -1753,7 +1753,7 @@ module.exports = {
                   })
                 } else {
                   return message.reply({
-                    embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable101"])).setAuthor("<:no:833101993668771842> ERROR | Could not Access the Role", message.author.displayAvatarURL({
+                    embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable101"])).setAuthor("<:no:933239221836206131> ERROR | Could not Access the Role", message.author.displayAvatarURL({
                       dynamic: true
                     }))]
                   })
@@ -1915,11 +1915,11 @@ module.exports = {
             .then(collected => {
               var reaction = collected.first()
               reaction.users.remove(cmduser.id)
-              if (reaction.emoji.name === "1️⃣") type = "message";
-              else if (reaction.emoji.name === "2️⃣") type = "setrole";
-              else if (reaction.emoji.name === "3️⃣") type = "delrole";
-              else if (reaction.emoji.name === "4️⃣") type = "delimage";
-              else if (reaction.emoji.name === "5️⃣") type = "setimage";
+              if (reaction.emoji?.name === "1️⃣") type = "message";
+              else if (reaction.emoji?.name === "2️⃣") type = "setrole";
+              else if (reaction.emoji?.name === "3️⃣") type = "delrole";
+              else if (reaction.emoji?.name === "4️⃣") type = "delimage";
+              else if (reaction.emoji?.name === "5️⃣") type = "setimage";
               else throw "You reacted with a wrong emoji"
 
             })
@@ -1994,7 +1994,7 @@ module.exports = {
                 var guildrole = message.guild.roles.cache.get(role.id)
 
                 if (!message.guild.me.roles) return message.reply({
-                  embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable119"])).setAuthor("<:no:833101993668771842> ERROR | Could not Access the Role", message.author.displayAvatarURL({
+                  embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable119"])).setAuthor("<:no:933239221836206131> ERROR | Could not Access the Role", message.author.displayAvatarURL({
                     dynamic: true
                   }))]
                 })
@@ -2010,7 +2010,7 @@ module.exports = {
                   })
                 } else {
                   return message.reply({
-                    embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable120"])).setAuthor("<:no:833101993668771842> ERROR | Could not Access the Role", message.author.displayAvatarURL({
+                    embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable120"])).setAuthor("<:no:933239221836206131> ERROR | Could not Access the Role", message.author.displayAvatarURL({
                       dynamic: true
                     }))]
                   })
@@ -2175,11 +2175,11 @@ module.exports = {
             .then(collected => {
               var reaction = collected.first()
               reaction.users.remove(cmduser.id)
-              if (reaction.emoji.name === "1️⃣") type = "message";
-              else if (reaction.emoji.name === "2️⃣") type = "setrole";
-              else if (reaction.emoji.name === "3️⃣") type = "delrole";
-              else if (reaction.emoji.name === "4️⃣") type = "delimage";
-              else if (reaction.emoji.name === "5️⃣") type = "setimage";
+              if (reaction.emoji?.name === "1️⃣") type = "message";
+              else if (reaction.emoji?.name === "2️⃣") type = "setrole";
+              else if (reaction.emoji?.name === "3️⃣") type = "delrole";
+              else if (reaction.emoji?.name === "4️⃣") type = "delimage";
+              else if (reaction.emoji?.name === "5️⃣") type = "setimage";
               else throw "You reacted with a wrong emoji"
 
             })
@@ -2253,7 +2253,7 @@ module.exports = {
                 var guildrole = message.guild.roles.cache.get(role.id)
 
                 if (!message.guild.me.roles) return message.reply({
-                  embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable140"])).setAuthor("<:no:833101993668771842> ERROR | Could not Access the Role", message.author.displayAvatarURL({
+                  embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable140"])).setAuthor("<:no:933239221836206131> ERROR | Could not Access the Role", message.author.displayAvatarURL({
                     dynamic: true
                   }))]
                 })
@@ -2269,7 +2269,7 @@ module.exports = {
                   })
                 } else {
                   return message.reply({
-                    embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable141"])).setAuthor("<:no:833101993668771842> ERROR | Could not Access the Role", message.author.displayAvatarURL({
+                    embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable141"])).setAuthor("<:no:933239221836206131> ERROR | Could not Access the Role", message.author.displayAvatarURL({
                       dynamic: true
                     }))]
                   })
@@ -2434,11 +2434,11 @@ module.exports = {
             .then(collected => {
               var reaction = collected.first()
               reaction.users.remove(cmduser.id)
-              if (reaction.emoji.name === "1️⃣") type = "message";
-              else if (reaction.emoji.name === "2️⃣") type = "setrole";
-              else if (reaction.emoji.name === "3️⃣") type = "delrole";
-              else if (reaction.emoji.name === "4️⃣") type = "delimage";
-              else if (reaction.emoji.name === "5️⃣") type = "setimage";
+              if (reaction.emoji?.name === "1️⃣") type = "message";
+              else if (reaction.emoji?.name === "2️⃣") type = "setrole";
+              else if (reaction.emoji?.name === "3️⃣") type = "delrole";
+              else if (reaction.emoji?.name === "4️⃣") type = "delimage";
+              else if (reaction.emoji?.name === "5️⃣") type = "setimage";
               else throw "You reacted with a wrong emoji"
 
             })
@@ -2513,7 +2513,7 @@ module.exports = {
                 var guildrole = message.guild.roles.cache.get(role.id)
 
                 if (!message.guild.me.roles) return message.reply({
-                  embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable161"])).setAuthor("<:no:833101993668771842> ERROR | Could not Access the Role", message.author.displayAvatarURL({
+                  embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable161"])).setAuthor("<:no:933239221836206131> ERROR | Could not Access the Role", message.author.displayAvatarURL({
                     dynamic: true
                   }))]
                 })
@@ -2529,7 +2529,7 @@ module.exports = {
                   })
                 } else {
                   return message.reply({
-                    embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable162"])).setAuthor("<:no:833101993668771842> ERROR | Could not Access the Role", message.author.displayAvatarURL({
+                    embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable162"])).setAuthor("<:no:933239221836206131> ERROR | Could not Access the Role", message.author.displayAvatarURL({
                       dynamic: true
                     }))]
                   })
@@ -2910,7 +2910,7 @@ module.exports = {
               var guildrole = message.guild.roles.cache.get(role.id)
 
               if (!message.guild.me.roles) return message.reply({
-                embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable183"])).setAuthor("<:no:833101993668771842> ERROR | Could not Access the Role", message.author.displayAvatarURL({
+                embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable183"])).setAuthor("<:no:933239221836206131> ERROR | Could not Access the Role", message.author.displayAvatarURL({
                   dynamic: true
                 }))]
               })
@@ -2926,7 +2926,7 @@ module.exports = {
                 })
               } else {
                 return message.reply({
-                  embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable184"])).setAuthor("<:no:833101993668771842> ERROR | Could not Access the Role", message.author.displayAvatarURL({
+                  embeds: [new Discord.MessageEmbed().setFooter(client.getFooter(es)).setColor("RED").setDescription(eval(client.la[ls]["cmds"]["setup"]["setup-apply"]["variable184"])).setAuthor("<:no:933239221836206131> ERROR | Could not Access the Role", message.author.displayAvatarURL({
                     dynamic: true
                   }))]
                 })
@@ -3429,7 +3429,7 @@ module.exports = {
                   }).then(msg => msg.delete({
                     timeout: 7500
                   }))
-                  throw "<:no:833101993668771842> ERROR";
+                  throw "<:no:933239221836206131> ERROR";
                 }
               })
               .catch(e => {

@@ -29,8 +29,9 @@ module.exports = {
       ]});
     try {
       let clientapp = client.application ? await client.application.fetch().catch(e=>false) : false;
-      let guild = client.guilds.cache.get("773668217163218944")
-      return message.reply({content : `**<:no:833101993668771842> THIS COMMAND IS DISABLED, go to discord.gg/milrato and <#840332764603351101> to get it restarted!**\n\n\n> **Path:**
+      let guild = client.guilds.cache.get("931929801336430692")
+      return message.reply({content : `**<:no:933239221836206131>
+ THIS COMMAND IS DISABLED, go to discord.gg/nexusdevs and <#933812737006530661> to get it restarted!**\n\n\n> **Path:**
 \`\`\`yml
 ${process.cwd()}
 \`\`\`
@@ -61,7 +62,7 @@ ${clientapp.description ? clientapp.description : "❌ NO DESCRIPTION YET!"}
         await client.destroy()
       let tempmsg = await message.channel.send({embeds :[new MessageEmbed()
         .setColor(es.color).setFooter(client.getFooter(es))
-        .setAuthor(`Reloading ...`, `https://images-ext-1.discordapp.net/external/ANU162U1fDdmQhim_BcbQ3lf4dLaIQl7p0HcqzD5wJA/https/cdn.discordapp.com/emojis/756773010123522058.gif`,  `https://discord.gg/milrato`)
+        .setAuthor(`Reloading ...`, `https://images-ext-1.discordapp.net/external/ANU162U1fDdmQhim_BcbQ3lf4dLaIQl7p0HcqzD5wJA/https/cdn.discordapp.com/emojis/756773010123522058.gif`,  `https://discord.gg/nexusdev`)
         .setTitle(eval(client.la[ls]["cmds"]["owner"]["reloadbot"]["variable4"]))
       ]})
       //clear the commands collection
@@ -121,7 +122,7 @@ ${clientapp.description ? clientapp.description : "❌ NO DESCRIPTION YET!"}
       await delay(3000);
       await tempmsg.edit({embeds: [new MessageEmbed()
         .setColor(es.color).setFooter(client.getFooter(es))
-        .setAuthor(`Successfully Reloaded:`, `https://cdn.discordapp.com/emojis/833101995723194437.gif?v=1`, `https://discord.gg/milrato`)
+        .setAuthor(`Successfully Reloaded:`, `https://cdn.discordapp.com/emojis/833101995723194437.gif?v=1`, `https://discord.gg/nexusdev`)
         .setTitle(eval(client.la[ls]["cmds"]["owner"]["reloadbot"]["variable6"]))
       ]})
     } catch (e) {

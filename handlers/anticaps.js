@@ -195,7 +195,7 @@ module.exports = client => {
                     if(message.channel.permissionsFor(message.channel.guild.me).has(Permissions.FLAGS.MANAGE_MESSAGES)){
                         message.delete().catch((e) => {console.log(e)})
                     } else {
-                        message.channel.send(":x: **I am missing the MANAGE_MESSAGES Permission!**").then(m => {
+                        message.channel.send("<:Crying:934492112500703232> **I am missing the MANAGE_MESSAGES Permission!**").then(m => {
                             setTimeout(()=>{m.delete().catch(()=>{})}, 3500)
                         })
                     }

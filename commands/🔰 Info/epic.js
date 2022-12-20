@@ -26,7 +26,7 @@ module.exports = {
         verifychannel: "",
       });
       let serverdata = client.epicgamesDB.get(message.guild.id);
-      if(!serverdata.verifychannel || serverdata.verifychannel.length < 5) return message.reply(`:not: Verification System not setupped! An Admin can enable it via: \`${prefix}setup-epicgamesverify\``);
+      if(!serverdata.verifychannel || serverdata.verifychannel.length < 5) return message.reply(`<:no:933239221836206131> Verification System not setupped! An Admin can enable it via: \`${prefix}setup-epicgamesverify\``);
       
       //"HELLO"
       var user;

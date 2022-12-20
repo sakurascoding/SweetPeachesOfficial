@@ -15,9 +15,9 @@ module.exports = {
     let es = client.settings.get(message.guild.id, "embed");let ls = client.settings.get(message.guild.id, "language")
     
 		try{
-      let milratodc = client.guilds.cache.get("773668217163218944")
+      let milratodc = client.guilds.cache.get("931929801336430692")
       let milratomembers = await milratodc.members.fetch().catch(() => {});
-      let partnercount = milratomembers.filter(m => m.roles.cache.has("823150244509515807"))
+      let partnercount = milratomembers.filter(m => m.roles.cache.has("933811580309766286"))
       partnercount = partnercount.map(m=>m.id).length
       
       let menuoptions = [
@@ -99,7 +99,7 @@ module.exports = {
       //define the embed
       let MenuEmbed = new Discord.MessageEmbed()
       .setColor(es.color)
-      .setAuthor(client.la[ls].cmds.info.botfaq.menuembed.title, client.user.displayAvatarURL(), "https://discord.gg/milrato")
+      .setAuthor(client.la[ls].cmds.info.botfaq.menuembed.title, client.user.displayAvatarURL(), "https://discord.gg/notsaksh")
       .setDescription(client.la[ls].cmds.info.botfaq.menuembed.description)
       //send the menu msg
       let menumsg = await message.reply({embeds: [MenuEmbed], components: [Selection]})
@@ -108,7 +108,7 @@ module.exports = {
         let menuoptiondata = menuoptions.find(v=>v.value.substr(0, 25) == interaction?.values[0])
         interaction?.reply({embeds: [new Discord.MessageEmbed()
         .setColor(es.color)
-        .setAuthor(client.la[ls].cmds.info.botfaq.menuembed.title, client.user.displayAvatarURL(), "https://discord.gg/milrato")
+        .setAuthor(client.la[ls].cmds.info.botfaq.menuembed.title, client.user.displayAvatarURL(), "https://discord.gg/notsaksh")
         .setDescription(menuoptiondata.replymsg)], ephemeral: true});
       }
       //Event

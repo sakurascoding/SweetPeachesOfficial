@@ -28,7 +28,7 @@ module.exports = {
         if(newtime < 0) newtime*=-1;
         msg.edit({embeds: [new MessageEmbed()
           .setColor(es.color).setThumbnail(es.thumb ? es.footericon && (es.footericon.includes("http://") || es.footericon.includes("https://")) ? es.footericon : client.user.displayAvatarURL() : null)
-          .setFooter("It Takes longer, because i am getting my host ping!", es.footericon && (es.footericon.includes("http://") || es.footericon.includes("https://")) ? es.footericon : client.user.displayAvatarURL())
+          .setFooter("It Takes Longer, Because i Am Getting My Host Ping!", es.footericon && (es.footericon.includes("http://") || es.footericon.includes("https://")) ? es.footericon : client.user.displayAvatarURL())
           .setTitle(handlemsg(client.la[ls].cmds.info.ping.m2, { botping: Math.floor(client.ws.ping + newtime), ping: Math.floor(newtime) + "ms", wsping: Math.floor(client.ws.ping)}))
         ]});
       })

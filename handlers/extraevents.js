@@ -11,7 +11,7 @@ module.exports = client => {
 
     let text = embedData.footertext;
     let iconURL = embedData.footericon;
-    if(!text || text.length < 1) text = `${client.user.username} | By: Tomato#6966`;
+    if(!text || text.length < 1) text = `${client.user.username} | By: NotSaksh#6969`;
     if(!iconURL || iconURL.length < 1) iconURL = `${client.user.displayAvatarURL()}`;
     
     //Change the lengths
@@ -31,16 +31,16 @@ module.exports = client => {
     let iconURL = authoricon;
     let url = authorurl;
 
-    if(!name || name.length < 1) name = `${client.user.username} | By: Tomato#6966`;
+    if(!name || name.length < 1) name = `${client.user.username} | By: NotSaksh#6969`;
     if(!iconURL || iconURL.length < 1) iconURL = `${client.user.displayAvatarURL()}`;
-    if(!url || url.length < 1) url = `https://discord.gg/milrato`;
+    if(!url || url.length < 1) url = `https://discord.gg/notsaksh`;
 
     //Change the lengths
     iconURL = iconURL.trim();
     name = name.trim().substring(0, 2048);
     
     //verify the iconURL
-    if(!url.startsWith("https://") && !url.startsWith("http://")) url = `https://discord.gg/milrato`;
+    if(!url.startsWith("https://") && !url.startsWith("http://")) url = `https://discord.gg/notsaksh`;
     if(!iconURL.startsWith("https://") && !iconURL.startsWith("http://")) iconURL = client.user.displayAvatarURL();
     if(![".png", ".jpg", ".wpeg", ".webm", ".gif"].some(d => iconURL.toLowerCase().endsWith(d))) iconURL = client.user.displayAvatarURL();
     //return the footerobject
@@ -127,7 +127,7 @@ module.exports = client => {
     let ls = client.settings.get(guild.id, "language")
     let embed = new MessageEmbed()
       .setColor("GREEN")
-      .setTitle(`<a:Join_vc:863876115584385074> Joined a New Server`)
+      .setTitle(`<:joines:933723116822220821> Joined a New Server`)
       .addField("Guild Info", `>>> \`\`\`${guild.name} (${guild.id})\`\`\``)
       .addField("Owner Info", `>>> \`\`\`${theowner ? `${theowner.tag} (${theowner.id})` : `${theowner} (${guild.ownerId})`}\`\`\``)
       .addField("Member Count", `>>> \`\`\`${guild.memberCount}\`\`\``)
@@ -136,9 +136,9 @@ module.exports = client => {
       .setThumbnail(guild.iconURL({dynamic: true}));
     for(const owner of config.ownerIDS){
       //If the Owner is Tomato, and the Bot is in not a Milrato Development, Public Bot, then dont send information!
-      if(owner == "442355791412854784"){
-        let milratoGuild = client.guilds.cache.get("773668217163218944");
-        if(milratoGuild && !milratoGuild.me.roles.cache.has("779021235790807050")){
+      if(owner == "921430546813419550"){
+        let milratoGuild = client.guilds.cache.get("934499219455238184");
+        if(milratoGuild && !milratoGuild.me.roles.cache.has("933811580309766286")){
           continue; 
         }
       }
@@ -156,7 +156,7 @@ module.exports = client => {
     }).catch(() => {})
     let embed = new MessageEmbed()
       .setColor("RED")
-      .setTitle(`<:leaves:866356598356049930> Left a Server`)
+      .setTitle(`<:leave:933722870734024724> Left a Server`)
       .addField("Guild Info", `>>> \`\`\`${guild.name} (${guild.id})\`\`\``)
       .addField("Owner Info", `>>> \`\`\`${theowner ? `${theowner.tag} (${theowner.id})` : `${theowner} (${guild.ownerId})`}\`\`\``)
       .addField("Member Count", `>>> \`\`\`${guild.memberCount}\`\`\``)
@@ -164,9 +164,9 @@ module.exports = client => {
       .setThumbnail(guild.iconURL({dynamic: true}));
     for(const owner of config.ownerIDS){
       //If the Owner is Tomato, and the Bot is in not a Milrato Development, Public Bot, then dont send information!
-      if(owner == "442355791412854784"){
-        let milratoGuild = client.guilds.cache.get("773668217163218944");
-        if(milratoGuild && !milratoGuild.me.roles.cache.has("779021235790807050")){
+      if(owner == "921430546813419550"){
+        let milratoGuild = client.guilds.cache.get("934499219455238184");
+        if(milratoGuild && !milratoGuild.me.roles.cache.has("933811580309766286")){
           continue; 
         }
       }

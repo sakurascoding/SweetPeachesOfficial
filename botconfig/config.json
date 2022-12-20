@@ -1,13 +1,13 @@
 {
-   "token": "MTAzNDAzOTYwNTA2ODA0NjQxNg.Gq7Nu2.zDEDTC4DzVmKo5Jw4oirDDq-0L7QkvzgR8OyuI",
+   "token": "MTAzNDAzOTYwNTA2ODA0NjQxNg.GcXpLW.lhxQtrLhrEz9o1OCLK7EDe5LWl0DDmbcduULes",
    "prefix": "$",
    "ownerIDS": [
       "796091752648802354"
    ],
    "memer_api": "g5SOlSadRiK",
    "status": {
-      "text": "*help | I love peaches. Wait, don't eat me...",
-      "text2": "*help | Justin Beiber's Peaches",
+      "text": "{prefix}help | I love peaches. Wait, don't eat me...",
+      "text2": "{prefix}help | Justin Beiber's Peaches",
       "type": "LISTENING",
       "url": "https://www.youtube.com/watch?v=tQ0yjYUFKAE"
    },

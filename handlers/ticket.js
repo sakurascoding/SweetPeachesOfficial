@@ -59,7 +59,7 @@ module.exports = (client) => {
           {
             let data = client.setups.get(ticketchannel.id, "ticketdata");
             if(data.state != "closed"){
-              return interaction?.reply({content: `<:no:833101993668771842> **You already have an Ticket!** <#${ticketchannel.id}>`, ephemeral: true});
+              return interaction?.reply({content: `<:no:933239221836206131> **You already have an Ticket!** <#${ticketchannel.id}>`, ephemeral: true});
             }
           }
         } catch {
@@ -178,7 +178,7 @@ module.exports = (client) => {
        * CREATE THE CHANNEL
        */
       guild.channels.create(channelname.substr(0, 31), optionsData).then(async ch => {
-        await interaction?.reply({content: `<a:Loading:833101350623117342> **Creating your Ticket...** (Usually takes 0-2 Seconds)`, ephemeral: true});
+        await interaction?.reply({content: `<a:loading:933964409661972491> **Creating your Ticket...** (Usually takes 0-2 Seconds)`, ephemeral: true});
         let es = client.settings.get(guild.id, "embed")
         client.setups.push("TICKETS", user.id, ticketspath);
         client.setups.push("TICKETS", ch.id, ticketspath);
@@ -197,14 +197,14 @@ module.exports = (client) => {
           .setFooter(client.getFooter(`To close/manage this ticket react with the buttons\nYou can also type: ${client.settings.get(guild.id, "prefix")}ticket`, es.footericon))
           .setAuthor(client.getAuthor(`Ticket for: ${user.tag}`, user.displayAvatarURL({
             dynamic: true
-          }), "https://discord.gg/milrato"))
+          }), "https://discord.gg/notsaksh"))
           .setDescription(ticket.message.replace(/\{user\}/igu, `${user}`).substr(0, 2000))
         var ticketembeds = [ticketembed]
         if(ticket.claim.enabled){
           var claimEmbed = new MessageEmbed()
             .setColor("ORANGE").setThumbnail(es.thumb ? es.footericon && (es.footericon.includes("http://") || es.footericon.includes("https://")) ? es.footericon : client.user.displayAvatarURL() : null)
             .setFooter(client.getFooter(es))
-            .setAuthor(client.getAuthor(`A Staff Member will claim the Ticket soon!`, "https://cdn.discordapp.com/emojis/833101350623117342.gif?size=44", "https://discord.gg/milrato"))
+            .setAuthor(client.getAuthor(`A Staff Member will claim the Ticket soon!`, "https://cdn.discordapp.com/emojis/833101350623117342.gif?size=44", "https://discord.gg/notsaksh"))
             .setDescription(ticket.claim.messageOpen.replace(/\{user\}/igu, `${user}`).substr(0, 2000))
             ticketembeds.push(claimEmbed)
         }
@@ -251,7 +251,7 @@ module.exports = (client) => {
             })
           }
         }
-        await interaction?.editReply({content: `<a:yes:833101995723194437> **Your Ticket is created!** <#${ch.id}>`, ephemeral: true});
+        await interaction?.editReply({content: `<a:yes:933239140718358558> **Your Ticket is created!** <#${ch.id}>`, ephemeral: true});
       }).catch(e => {
         interaction?.reply({content: ":x: **Something went wrong!**", ephemeral: true})
         console.log(e)

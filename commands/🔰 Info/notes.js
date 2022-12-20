@@ -32,23 +32,23 @@ module.exports = {
         ]
       })
       var notes = client.notes.get(message.author.id, "notes");
-      var button_forward = new MessageButton().setStyle('PRIMARY').setCustomId('notes_forwards').setEmoji('832598861813776394').setLabel("Forwards")
-      var button_back = new MessageButton().setStyle('PRIMARY').setCustomId('notes_backwards').setEmoji("833802907509719130").setLabel("Backwards")
-      var button_jump = new MessageButton().setStyle('PRIMARY').setCustomId('notes_jump').setLabel('Jump to Page').setEmoji("🔢");
+      var button_forward = new MessageButton().setStyle('PRIMARY').setCustomId('notes_forwards').setEmoji('933701797032361984').setLabel("Forwards")
+      var button_back = new MessageButton().setStyle('PRIMARY').setCustomId('notes_backwards').setEmoji("933701834059706389").setLabel("Backwards")
+      var button_jump = new MessageButton().setStyle('PRIMARY').setCustomId('notes_jump').setLabel('Jump to Page').setEmoji("934486662954770483");
       var button_empty1 = new MessageButton().setStyle('SECONDARY').setCustomId('notes_empty1').setLabel("\u200b").setDisabled(true)
       var button_list = new MessageButton().setStyle('PRIMARY').setCustomId('notes_list').setLabel('List Notes').setEmoji("📑");
       
       var button_create = new MessageButton().setStyle('SUCCESS').setCustomId('notes_create').setEmoji('📋').setLabel("Create New Note")
-      var button_edit = new MessageButton().setStyle('PRIMARY').setCustomId('notes_edit').setEmoji('✏️').setLabel("Edit this Note")
+      var button_edit = new MessageButton().setStyle('PRIMARY').setCustomId('notes_edit').setEmoji('✏️').setLabel("Edit This Note")
       var button_Delete = new MessageButton().setStyle('PRIMARY').setCustomId('notes_delete').setEmoji('🗑').setLabel("Delete this Note")
-      var button_disable = new MessageButton().setStyle('SECONDARY').setCustomId('notes_disable').setLabel('Stop the Buttons').setEmoji("833101993668771842");
+      var button_disable = new MessageButton().setStyle('SECONDARY').setCustomId('notes_disable').setLabel('Stop the Buttons').setEmoji("933239221836206131");
       
       var embeds = [];
       var currentPage = 0;
       if(!notes || notes.length == 0){
           embeds.push(new MessageEmbed().setColor(es.color)
           .setFooter(message.author.tag+ ` Page | 0/0`, message.author.displayAvatarURL({dynamic: true}))
-          .setTitle(`<:no:833101993668771842> No Notes created yet`)
+          .setTitle(`<:no:933239221836206131> No Notes created yet`)
           .setDescription(`To create your first Note click on the green Button "\`📋 Create New Note\`"`)
           )
           button_forward.setDisabled(true);
@@ -143,7 +143,7 @@ module.exports = {
                   if(!notes || notes.length == 0){
                       embeds.push(new MessageEmbed().setColor(es.color)
                       .setFooter(message.author.tag+ ` Page | 0/0`, message.author.displayAvatarURL({dynamic: true}))
-                      .setTitle(`<:no:833101993668771842> No Notes created yet`)
+                      .setTitle(`<:no:933239221836206131> No Notes created yet`)
                       .setDescription(`To create your first Note click on the green Button "\`📋 Create New Note\`"`)
                       )
                       button_forward.setDisabled(true);
@@ -292,7 +292,7 @@ module.exports = {
             var buttonRow1 = new MessageActionRow().addComponents([button_back, button_forward, button_jump, button_empty1, button_list])
             var buttonRow2 = new MessageActionRow().addComponents([button_create, button_edit, button_Delete, button_disable])
             allbuttons = [buttonRow1, buttonRow2]
-            await b?.reply("<:no:833101993668771842> **Disabled the Buttons**", true);
+            await b?.reply("<:no:933239221836206131> **Disabled the Buttons**", true);
             await notemsg.edit({content: `***NOTE BUTTONS DISABLED***`,embeds: [embeds[currentPage]], components: allbuttons}).catch(e=>{console.log(String(e).grey)});
           } 
           //Number Jump
@@ -307,7 +307,7 @@ module.exports = {
               try{mmmmm.delete()}catch(e){console.log(String(e).grey)}
               try{collected.first().delete()}catch(e){console.log(String(e).grey)}
               if(Page < 0 || Page > embeds.length - 1){
-                return message.reply("<:no:833101993668771842> **Value out of Range!**").then(msg=>{
+                return message.reply("<:no:933239221836206131> **Value out of Range!**").then(msg=>{
                   setTimeout(()=>{
                     try{msg.delete()}catch(e){console.log(String(e).grey)}
                   }, 2500)
@@ -362,7 +362,7 @@ module.exports = {
             if(!notes || notes.length == 0){
                 embeds.push(new MessageEmbed().setColor(es.color)
                 .setFooter(message.author.tag+ ` Page | 0/0`, message.author.displayAvatarURL({dynamic: true}))
-                .setTitle(`<:no:833101993668771842> No Notes created yet`)
+                .setTitle(`<:no:933239221836206131> No Notes created yet`)
                 .setDescription(`To create your first Note click on the green Button "\`📋 Create New Note\`"`)
                 )
                 button_forward.setDisabled(true);
@@ -458,7 +458,7 @@ module.exports = {
                   .setTitle(`All of your Notes you can jump to!`)
                   .setDescription(`${notes.map((data, index) => `**\`Page: ${index + 2}/${notes.length + 1}\`:** ${String(data.title).substr(0, 80)}`).join("\n")}`.substr(0, 2048));
                   embeds[thenote + 1] = new MessageEmbed().setColor(es.color)
-                    .setFooter(message.author.tag + ` | Page: ${thenote + 2}/${embeds.length}` + ` | ${newnote.edited ? "Edited": "Created"} at: `, message.author.displayAvatarURL({dynamic: true}))
+                    .setFooter(message.author.tag + ` | Page: ${thenote + 2}/${embeds.length}` + ` | ${newnote.edited ? "Edited": "Created"} At: `, message.author.displayAvatarURL({dynamic: true}))
                     .setTitle(`${title}`)
                     .setDescription(`${description}`)
                     .setTimestamp(Date.now())
@@ -532,7 +532,7 @@ module.exports = {
         var buttonRow1 = new MessageActionRow().addComponents([button_back.setDisabled(false), button_forward.setDisabled(false), button_jump.setDisabled(false), button_empty1.setDisabled(false), button_list.setDisabled(false)])
         var buttonRow2 = new MessageActionRow().addComponents([button_create.setDisabled(false), button_edit.setDisabled(false), button_Delete.setDisabled(false), button_disable.setDisabled(false)])
         allbuttons = [buttonRow1, buttonRow2]
-        await notemsg.edit({content: `***NOTE BUTTONS DISABLED***`,embeds: [embeds[currentPage]], components: allbuttons}).catch(e=>{console.log(String(e).grey)});
+        await notemsg.edit({content: `***<:no:933239221836206131> NOTE BUTTONS DISABLED***`,embeds: [embeds[currentPage]], components: allbuttons}).catch(e=>{console.log(String(e).grey)});
       }
     });
     } catch (e) {

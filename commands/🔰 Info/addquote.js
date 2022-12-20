@@ -32,7 +32,7 @@ module.exports = {
       if(user.id != message.author.id) {
         if(!message.member.permissions.has(Discord.Permissions.FLAGS.ADMINISTRATOR))  
         {
-          return message.reply(":x: **Only Admins can add Quotes to other Users!**")
+          return message.reply("<:no:933239221836206131> **Only Admins can add Quotes to other Users!**")
         }
       }
       client.afkDB.ensure(user.id, {

@@ -31,7 +31,7 @@ module.exports = {
       if(user.id != message.author.id) {
         if(!message.member.permissions.has(Discord.Permissions.FLAGS.ADMINISTRATOR))  
         {
-          return message.reply(":x: **Only Admins can add Quotes to other Users!**")
+          return message.reply("<:no:933239221836206131> **Only Admins can add Quotes to other Users!**")
         }
       }
       client.afkDB.ensure(user.id, {
@@ -48,7 +48,7 @@ module.exports = {
         return message.reply({embeds: [new MessageEmbed()
           .setColor(es.wrongcolor)
           .setFooter(client.getFooter(es))
-          .setTitle(":x: Wrong command Usage!")
+          .setTitle("<:no:933239221836206131> Wrong command Usage!")
           .setDescription(`\`${prefix}removequote ${user.id} <QuoteId (E.G: 0 ... First Quote)>\``)
         ]});
         

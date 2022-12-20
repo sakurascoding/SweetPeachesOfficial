@@ -34,13 +34,13 @@ module.exports = function (client, options) {
           .setTimestamp()
           .setAuthor(client.getAuthor(nM.user.tag, nM.user.displayAvatarURL({dynamic: true})))
           .setColor("RED")
-          .setDescription(`<a:Server_Boosts:867777823468027924> ${nM.user} **stopped Boosting us..** <:Cat_Sad:867722685949804565>`)
+          .setDescription(`<a:Server_Boosts:933787999387390032> ${nM.user} **stopped Boosting us..** <:sadok:934743452464349194>`)
       let startBoost = new MessageEmbed()
           .setFooter(client.getFooter("ID: " + nM.user.id))
           .setTimestamp()
           .setAuthor(client.getAuthor(nM.user.tag, nM.user.displayAvatarURL({dynamic: true})))
           .setColor("GREEN")
-          .setDescription(`<a:Server_Boosts:867777823468027924> ${nM.user} **has boosted us!** <a:Light_Saber_Dancce:867721861462229013>`)
+          .setDescription(`<a:Server_Boosts:933787999387390032> ${nM.user} **has boosted us!** <a:Light_Saber_Dancce:934497418387521586>`)
           
       //if he/she starts boosting
       if(!oM.premiumSince && nM.premiumSince) {
