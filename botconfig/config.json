@@ -1,22 +1,22 @@
 {
-   "token": "MTAzNDAzOTYwNTA2ODA0NjQxNg.GcXpLW.lhxQtrLhrEz9o1OCLK7EDe5LWl0DDmbcduULes",
+   "token": "",
    "prefix": "$",
    "ownerIDS": [
-      "796091752648802354"
+      "985641763677020251"
    ],
    "memer_api": "g5SOlSadRiK",
    "status": {
-      "text": "{prefix}help | I love peaches. Wait, don't eat me...",
-      "text2": "{prefix}help | Justin Beiber's Peaches",
+      "text": "{prefix}help | Head in the clouds...",
+      "text2": "{prefix}help | Keep on dreaming!",
       "type": "LISTENING",
       "url": "https://www.youtube.com/watch?v=tQ0yjYUFKAE"
    },
    "clientsettings": {
       "nodes": [
          {
-            "host": "78.108.218.114",
-            "port": 25219,
-            "password": "music.sakurascoding.xyz"
+            "host": "narco.buses.rocks",
+            "port": 2269,
+            "password": "glasshost1984"
          }
       ]
    },
